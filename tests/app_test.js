@@ -1,31 +1,10 @@
-var server   = require('../server'),
-    chai     = require('chai'),
-    chaiHTTP = require('chai-http'),
-    should   = chai.should();
+import React,{Component} from 'react';
+class App extends Component {
+  render() {
+    return (
+        <h1> Hello Node JS</h1>
+    );
+  }
+}
 
-chai.use(chaiHTTP);
-
-reqServer = process.env.HTTP_TEST_SERVER || server
-
-describe('Basic routes tests', function() {
-
-    it('GET to / should return 200', function(done){
-        chai.request(reqServer)
-        .get('/')
-        .end(function(err, res) {
-            res.should.have.status(200);
-            done();
-        })
-
-    })
-
-    it('GET to /pagecount should return 200', function(done){
-        chai.request(reqServer)
-        .get('/pagecount')
-        .end(function(err, res) {
-            res.should.have.status(200);
-            done();
-        })
-
-    })
-})
+export default App;
